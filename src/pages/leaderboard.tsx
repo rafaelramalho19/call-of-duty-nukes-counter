@@ -66,7 +66,7 @@ export default function Nukes() {
         <div>Final Score: {scoreboard.final_score}</div>
         <div>Max Kills: {scoreboard.max_kills}</div>
         <div>Total Kills: {scoreboard.total_kills}</div>
-        <div>Scores: {scoreboard?.scores?.join(',')}</div>
+        <div>Scores: <span className={styles.score}>{scoreboard?.scores?.join(' | ')}</span></div>
       </main>
     </>
   );
