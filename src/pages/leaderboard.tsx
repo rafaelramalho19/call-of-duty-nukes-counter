@@ -62,11 +62,11 @@ export default function Nukes() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div>Placement: {scoreboard.rank}</div>
-        <div>Final Score: {scoreboard.final_score}</div>
-        <div>Max Kills: {scoreboard.max_kills}</div>
-        <div>Total Kills: {scoreboard.total_kills}</div>
-        <div>Scores: <span className={styles.score}>{scoreboard?.scores?.join(' | ')}</span></div>
+        <div>Placement: <strong>{scoreboard.rank}</strong></div>
+        <div>Final Score: <strong>{scoreboard.final_score}</strong></div>
+        <div>Max Kills: <strong>{scoreboard.max_kills}</strong></div>
+        <div>Total Kills: <strong>{scoreboard.total_kills}</strong></div>
+        <div>Scores: <strong className={styles.score}>{scoreboard?.scores?.join(' | ')}</strong></div>
       </main>
     </>
   );
