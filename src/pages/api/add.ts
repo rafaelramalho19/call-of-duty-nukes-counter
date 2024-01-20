@@ -31,7 +31,6 @@ export default async function handler(
   }
 
   const title = await getTitle();
-  console.log('[TITLE]', title);
 
   if (!title) {
     return res.status(200).json({ newNumber: nuke.number, twitch: false })

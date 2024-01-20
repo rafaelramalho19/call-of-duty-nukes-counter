@@ -43,6 +43,12 @@ type ChannelInfoData = {
     }>
 }
 
+type OauthRequest = {
+    access_token?: string,
+    expires_in?: number,
+    token_type?: "bearer"
+}
+
 export const getTitle = async () => {
     const { access_token: token } = await (await fetch(`https://id.twitch.tv/oauth2/token`, {
         method: 'POST',
@@ -54,7 +60,7 @@ export const getTitle = async () => {
             client_secret: `${process.env.TWITCH_SECRET}`,
             grant_type: `client_credentials`
         })
-    })).json();
+    })).json() as OauthRequest;
 
     const { data } = await ((await fetch(`https://api.twitch.tv/helix/channels?broadcaster_id=${process.env.TWITCH_STREAMER_ID}`, {
         headers: {
@@ -62,8 +68,6 @@ export const getTitle = async () => {
             'Client-Id': `${process.env.TWITCH_CLIENT_ID}`
         }
     })).json() as Promise<ChannelInfoData>);
-
-    console.log(data);
 
     return data.length > 0 && data[0].title;
 }
