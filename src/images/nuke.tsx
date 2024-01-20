@@ -6,10 +6,10 @@ export default function NukeIcon(props: any) {
       <circle
         cx="49.737"
         cy="50.368"
-        stroke-width="3.5"
+        strokeWidth="3.5"
         stroke="#333"
         fill="#f0af6b"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         r="39"
       />
       <g>

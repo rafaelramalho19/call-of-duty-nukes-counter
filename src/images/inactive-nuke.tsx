@@ -12,10 +12,10 @@ export default function InactiveNukeIcon(props: any) {
       <circle
         cx="49.737"
         cy="50.368"
-        stroke-width="3.5"
+        strokeWidth="3.5"
         stroke="#333"
         fill="#CCC"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         r="39"
       />
       <path
