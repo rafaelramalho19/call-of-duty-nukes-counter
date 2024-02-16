@@ -21,7 +21,7 @@ export default async function handler(
     }
   });
 
-  if (!process.env.TWITCH_TOKEN) {
+  if (!process.env.TWITCH_TOKEN || req.query?.skipTwitch) {
     return res.status(200).json({ success: 'OK', twitch: false })
   }
 
